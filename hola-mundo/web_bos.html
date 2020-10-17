@@ -7,20 +7,55 @@
 <body>
 <script>
 
-const promise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve('Pedro is cool');
-        //reject(Error('Pedro is not that cool'));
-    }, 3000);
-});
+const posts = [
+    { title: "I love Javascript", author: 'Pedro Fdez', id: 1},
+    { title: "CSS!", author: 'Chris Coyier', id: 2},
+    { title: "Dev Tools Trick", author: 'Addy Osmani', id: 3},
+];
 
-promise
-    .then(data => {
-   console.log(data)
+const authors = [
+    { name: "Pedro Fdez", twitter: '@Pedro_the_QA', bio: "Ad Augusta Per Angusta"},
+    { name: "Chris Coyier", twitter: '@chriscoyier', bio: "CSS Tricks and CodePen"},
+    { name: "Addy Osmani", twitter: '@addyosmani', bio: "Googler"},
+
+];
+
+function getPostById(id) {
+    return new Promise(((resolve, reject) => {
+        setTimeout(() => {
+            const post = posts.find(post => post.id === id);
+            if (post) {
+                resolve(post);
+            } else {
+                reject(Error('No post was found!'));
+            }
+        }, 1000)
+    }));
+}
+
+function hydrate(post) {
+    return new Promise(((resolve, reject) => {
+        const authorDetails = authors.find(person => person.name === post.author);
+        if (post) {
+            post.author = authorDetails;
+            resolve(authorDetails);
+        } else {
+            reject(Error('No author was found!'));
+        }
+    }))
+}
+
+getPostById(1)
+    .then(post => {
+        console.log(post);
+        return hydrate(post);
     })
-    .catch(error => {
-       console.error(error);
-    });
+    .then(post => {
+        console.log(post)
+    })
+    .catch(err => {
+        console.error(err)
+    })
 
 </script>
 </body>
