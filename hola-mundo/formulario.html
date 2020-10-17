@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>DOM practice, js functions and events</title>
+        <script type="text/javascript" src="js/33_local_storage.js"></script>
+        <style>
+            .box{
+                width: 200px;
+                height: 250px;
+                float: left;
+                margin: 20px;
+            }
+            .dashed{
+                border: 3px dashed black;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>DOM practice, js functions and events</h1>
+
+        <div class="box">
+            <form action="#" method="POST" id="form" onsubmit="return false;">
+                <label for="first_name">First Name:</label> <br>
+                <input type="text" name="first_name" id="first_name"/> <br>
+                <div id="error_name"></div>
+
+                <label for="surname">Surname:</label> <br>
+                <input type="text" name="surname" id="surname"/> <br>
+
+                <label for="age">Age:</label> <br>
+                <input type="text" name="age" id="age"/> <br>
+
+                <input type="submit" value="submit" id="submit" /> <br>
+            </form>
+        </div>
+
+        <div class="box dashed">
+            <h3>User Information</h3>
+            <hr>
+        </div>
+    </body>
+</html>
