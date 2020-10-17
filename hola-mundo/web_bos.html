@@ -7,15 +7,19 @@
 <body>
 <script>
 
-const postsPromises = fetch('https://jsonplaceholder.typicode.com/usersss');
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('Pedro is cool');
+        //reject(Error('Pedro is not that cool'));
+    }, 3000);
+});
 
-postsPromises
-    .then(data => data.json())
-    .then(function (data) {
-        console.log(data)})
+promise
+    .then(data => {
+   console.log(data)
+    })
     .catch(error => {
-        alert('There has been an error on the request!');
-        console.error(error);
+       console.error(error);
     });
 
 </script>
