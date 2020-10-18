@@ -7,54 +7,40 @@
 <body>
 <script>
 
-const posts = [
-    { title: "I love Javascript", author: 'Pedro Fdez', id: 1},
-    { title: "CSS!", author: 'Chris Coyier', id: 2},
-    { title: "Dev Tools Trick", author: 'Addy Osmani', id: 3},
-];
+// const weather = new Promise(resolve => {
+//     setTimeout(() => {
+//         resolve({temp: 4, conditions: 'clear'});
+//     }, 2000)
+// });
+//
+// const tweets = new Promise(resolve => {
+//     setTimeout(() => {
+//         resolve(['I like basketball', 'Pizza is nice too!']);
+//     })
+// });
+//
+// Promise
+//     .all([weather, tweets])
+//     .then(responses => {
+//         const [weatherInfo, tweetsInfo] = responses;
+//         console.log(weatherInfo, tweetsInfo);
+//     });
 
-const authors = [
-    { name: "Pedro Fdez", twitter: '@Pedro_the_QA', bio: "Ad Augusta Per Angusta"},
-    { name: "Chris Coyier", twitter: '@chriscoyier', bio: "CSS Tricks and CodePen"},
-    { name: "Addy Osmani", twitter: '@addyosmani', bio: "Googler"},
+// api1 => https://jsonplaceholder.typicode.com/users
+// api2 => https://jsonplaceholder.typicode.com/photos
 
-];
+const usersPost = fetch('https://jsonplaceholder.typicode.com/users');
+const photosPost = fetch('https://jsonplaceholder.typicode.com/photos');
 
-function getPostById(id) {
-    return new Promise(((resolve, reject) => {
-        setTimeout(() => {
-            const post = posts.find(post => post.id === id);
-            if (post) {
-                resolve(post);
-            } else {
-                reject(Error('No post was found!'));
-            }
-        }, 1000)
-    }));
-}
-
-function hydrate(post) {
-    return new Promise(((resolve, reject) => {
-        const authorDetails = authors.find(person => person.name === post.author);
-        if (post) {
-            post.author = authorDetails;
-            resolve(authorDetails);
-        } else {
-            reject(Error('No author was found!'));
-        }
-    }))
-}
-
-getPostById(1)
-    .then(post => {
-        console.log(post);
-        return hydrate(post);
+Promise
+    .all([usersPost, photosPost])
+    .then(responses => {
+        // debugger;
+       console.log(responses);
+        return Promise.all(responses.map(res => res.json()));
     })
-    .then(post => {
-        console.log(post)
-    })
-    .catch(err => {
-        console.error(err)
+    .then(responses => {
+        console.log(responses)
     })
 
 </script>
