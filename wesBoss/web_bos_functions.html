@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Functions!</title>
+</head>
+<body>
+<script>
+    const cars = ['mazda', 'mercedes', 'bmw'];
+
+    const carsType = cars.map(function (cars) {
+        return `${cars} Hybrid`;
+    });
+
+    // Arrow function examples
+    const carsType2 = cars.map((cars) => {
+        return `${cars} Hybrid`;
+    });
+
+    const carsType3 = cars.map((cars) => `${cars} Hybrid`);
+
+    const myCar = cars.map(() => `Mazda 3`);
+
+    console.log(cars);
+    console.log(carsType3);
+    console.log(myCar );
+</script>
+</body>
+</html>
