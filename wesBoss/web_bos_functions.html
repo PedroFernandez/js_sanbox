@@ -6,24 +6,18 @@
 </head>
 <body>
 <script>
-    const cars = ['mazda', 'mercedes', 'bmw'];
+    const race = '100m Dash';
+    const winners = ['Pedro Fdez', 'Paula Fdez', 'Helena Prieto'];
 
-    const carsType = cars.map(function (cars) {
-        return `${cars} Hybrid`;
-    });
+    const win = winners.map((winner, i) => ({
+            name: winner, race: race, place: i + 1
+        })
+    );
 
-    // Arrow function examples
-    const carsType2 = cars.map((cars) => {
-        return `${cars} Hybrid`;
-    });
+    const ages = [2, 6, 12, 44, 50, 55, 66, 23, 12, 33, 88, 91];
 
-    const carsType3 = cars.map((cars) => `${cars} Hybrid`);
-
-    const myCar = cars.map(() => `Mazda 3`);
-
-    console.log(cars);
-    console.log(carsType3);
-    console.log(myCar );
+    const old = ages.filter(ages => ages >= 50);
+    console.log(old);
 </script>
 </body>
 </html>
