@@ -4,16 +4,6 @@ $(document).ready(function () {
     // Mouse Over and Out
 
     const box = $('#box');
-
-    // box.mouseover(function () {
-    //    $(this).css("background", "green")
-    // });
-    //
-    // box.mouseout(function () {
-    //     $(this).css("background", "red")
-    // });
-
-
     function changeColorToGreen(){
         $(this).css("background", "green")
     }
@@ -38,6 +28,7 @@ $(document).ready(function () {
     });
 
     var name = $("#name");
+    var data = $("#data");
 
     // console.log(name);
 
@@ -50,5 +41,20 @@ $(document).ready(function () {
 
         $("#data").show()
             .text($(this).val());
+    });
+
+    // Mousedown, mouseup
+    data.mousedown(function () {
+       $(this).css("border-color", "gray")
+    });
+
+    data.mouseup(function () {
+        $(this).css("border-color", "pink")
+    });
+
+    // Mousemove
+    $(document).mousemove(function () {
+       console.log("Client X" + event.clientX);
+       console.log("Client Y" + event.clientY);
     });
 });
