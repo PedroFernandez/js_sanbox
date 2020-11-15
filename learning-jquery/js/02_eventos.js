@@ -56,5 +56,8 @@ $(document).ready(function () {
     $(document).mousemove(function () {
        console.log("Client X" + event.clientX);
        console.log("Client Y" + event.clientY);
+
+       $('body').css('cursor', 'none');
+       $('#follow-me').css('left', event.clientX).css('top', event.clientY);
     });
 });
