@@ -5,11 +5,23 @@ $(document).ready(function () {
 
     const box = $('#box');
 
-    box.mouseover(function () {
-       $(this).css("background", "green")
-    });
+    // box.mouseover(function () {
+    //    $(this).css("background", "green")
+    // });
+    //
+    // box.mouseout(function () {
+    //     $(this).css("background", "red")
+    // });
 
-    box.mouseout(function () {
+
+    function changeColorToGreen(){
+        $(this).css("background", "green")
+    }
+
+    function changeColorToRed() {
         $(this).css("background", "red")
-    });
+    }
+
+    // Hover
+    box.hover(changeColorToGreen, changeColorToRed)
 });
