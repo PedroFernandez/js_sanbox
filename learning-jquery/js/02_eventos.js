@@ -36,4 +36,19 @@ $(document).ready(function () {
         $(this).css("background", "white")
             .css("color", "black")
     });
+
+    var name = $("#name");
+
+    // console.log(name);
+
+    name.focus(function () {
+        $(this).css("border", "2px solid green")
+    });
+
+    name.blur(function () {
+        $(this).css("border", "2px solid transparent");
+
+        $("#data").show()
+            .text($(this).val());
+    });
 });
