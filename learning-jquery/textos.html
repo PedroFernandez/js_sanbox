@@ -9,23 +9,48 @@
     </script>
     <script type="text/javascript" src="js/03_textos.js"></script>
 
+    <style>
+        #box{
+            width: 250px;
+            height: 250px;
+            border: solid black 5px;
+            background: beige;
+            transition: 500ms all;
+        }
+
+        #first_name{
+            padding: 10px;
+            margin-bottom: 20px;
+            height: 20px;
+            width: 300px;
+            font-size: 20px;
+        }
+
+        #data{
+            padding: 10px;
+            height: 20px;
+            width: 300px;
+            margin-bottom: 20px;
+            border: dashed 2px;
+            display: none;
+        }
+    </style>
 
 </head>
 <body>
-    <h1>Texts</h1>
-    <h3>Add new links</h3>
-    <input type="text" id="add_link">
-    <button id="add_button" disabled="disabled">
-        Add something
-    </button>
+    <h1>Texts Evening Practice</h1>
 
-    <ul id="menu">
-        <li><a href="https://www.google.com"></a></li>
-        <li><a href="https://www.yahoo.com"></a></li>
-        <li><a href="https://duckduckgo.com/"></a></li>
-        <li><a href="https://www.twitter.com"></a></li>
-    </ul>
+    <form>
+        <input type="text" id="first_name">Write some stuff here dude!</input>
+    </form>
 
+    <div id="data">
+        Hello some data to be displayed here
+    </div>
+
+    <div id="box">
+        Hello, I'm a smart Box bro!
+    </div>
 
 </body>
 </html>
