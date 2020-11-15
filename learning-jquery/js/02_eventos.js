@@ -24,4 +24,16 @@ $(document).ready(function () {
 
     // Hover
     box.hover(changeColorToGreen, changeColorToRed)
+
+    box.click(function () {
+       $(this).css("background", "black")
+              .css("color", "white")
+    });
+
+    // box.ondblclick
+
+    box.dblclick(function () {
+        $(this).css("background", "white")
+            .css("color", "black")
+    });
 });
