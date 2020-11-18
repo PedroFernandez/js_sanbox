@@ -16,6 +16,6 @@ $(document).ready(function () {
     });
 
     $('#all').click(function () {
-        $('#box').toggle('fast');
+        $('#box').fadeToggle('fast');
     });
 });
