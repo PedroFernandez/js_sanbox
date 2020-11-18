@@ -18,4 +18,26 @@ $(document).ready(function () {
     $('#all').click(function () {
         $('#box').fadeToggle('fast');
     });
+
+    $('#moveMe').click(function () {
+        $('#box').animate({
+            marginLeft: '500px',
+            height:      '110px',
+            fontSize:    '40px'
+        }, 'slow')
+            .animate({
+                borderRadius: '900px',
+                marginTop: '200px'
+            })
+            .animate({
+                marginLeft: '10px'
+            })
+            .animate({
+                marginTop: '15px',
+                height:    '50px',
+                border:     '5px dashed black',
+                background: '#ccc',
+                fontSize:   '19px'
+            });
+    })
 });
