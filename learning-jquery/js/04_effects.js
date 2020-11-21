@@ -12,7 +12,9 @@ $(document).ready(function () {
         $(this).hide();
         $('#show').show();
         // $('#box').fadeOut('slow');
-        $('#box').fadeTo('slow', 0.2);
+        $('#box').fadeTo('slow', 0.2, function () {
+            console.log("Hidden Box")
+        });
     });
 
     $('#all').click(function () {
